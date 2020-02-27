@@ -9,9 +9,11 @@ function app(people){
     switch(searchType){
       case 'yes':
         // TODO: search by name
+         searchByName(people);
         break;
       case 'no':
         // TODO: search by traits
+        searchByTrait(people);
         break;
       default:
         alert("Invalid input. Please try again!");
@@ -61,10 +63,56 @@ function app(people){
         return el;
       }
     });
-  
+}
     // TODO: What to do with filteredPeople?
-  
-  }
+    //Put all filtered pple in empty array
+    //return that array
+    //Or retun new array withou those pple
+
+       function searchByGeneder(people){
+           var gender = promptFor("What is the geneder of the person you are looking for",chars);
+           
+           let filteredPeople = peolpe.filter(function(el){
+                if (el.gender === gender) {
+               return el;
+           }
+           });
+          
+        }
+
+        function seacrhByHeight(people){
+            var height = prompt("How tall is the perosn you are looking for",chars);
+
+            let filteredPeople = peolpe.filter(function(el){
+                if (el.height === height){
+                    return el
+                }
+            });
+           
+        }
+
+        function seacrhByWeight(peolpe){
+            var weight = prompt("What is the wieght of the perosn you are looking for",chars);
+            
+            let filteredPeople = people.filter(function(el){
+                if (el.weight === weight){
+                    return el;
+                }
+            });
+           
+
+        }
+        function searchByEyeColor(peolpe){
+            var eyecolor = prompt("What is the eyecoloe of the person your looking for",chars);
+
+            let filteredPeople = peolpe.filter(function(el){
+                if (el.eyecolor === eyecolor){
+                    return el;
+                }
+            });
+          
+
+        }
   
   // alerts a list of people
   function displayPeople(people){
