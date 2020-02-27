@@ -13,7 +13,7 @@ function app(people){
         break;
       case 'no':
         // TODO: search by traits
-        searchByTrait(people);
+        FindPeopeleByTriats(people);
         break;
       default:
         alert("Invalid input. Please try again!");
@@ -62,8 +62,36 @@ function app(people){
       if(el.firstName === firstName && el.lastName === lastName) {
         return el;
       }
+      else {
+          return app(people);
+      }
     });
 }
+
+function FindPeopeleByTriats(people)
+{ var searchtraits = promptFor("choose what trait do you want to search for");
+ switch(searchtraits){
+     case "1":
+        searchByGeneder(people);
+         break;
+    case "2":
+        seacrhByHeight(people);
+        break;
+    case "3":
+        seacrhByWeight(people);
+        break;
+    case "4":
+        searchByEyeColor(people);
+        break;
+    default:
+        return app(peolpe);
+ }
+
+}
+
+
+
+
     // TODO: What to do with filteredPeople?
     //Put all filtered pple in empty array
     //return that array
@@ -76,6 +104,9 @@ function app(people){
                 if (el.gender === gender) {
                return el;
            }
+           else {
+            return app(people);
+        }
            });
           
         }
@@ -86,6 +117,9 @@ function app(people){
             let filteredPeople = peolpe.filter(function(el){
                 if (el.height === height){
                     return el
+                }
+                else {
+                    return app(people);
                 }
             });
            
@@ -98,6 +132,9 @@ function app(people){
                 if (el.weight === weight){
                     return el;
                 }
+                else {
+                    return app(people);
+                }
             });
            
 
@@ -109,8 +146,10 @@ function app(people){
                 if (el.eyecolor === eyecolor){
                     return el;
                 }
+                else {
+                    return app(people);
+                }
             });
-          
 
         }
   
