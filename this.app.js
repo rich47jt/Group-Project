@@ -1,4 +1,4 @@
-/*
+ /*
 Build all of your functions for displaying and gathering information below (GUI).
 */
 
@@ -37,6 +37,7 @@ function app(people){
     switch(displayOption){
       case "info":
         // TODO: get person's info
+        displayPeople(people);
         break;
       case "family":
         // TODO: get person's family
@@ -102,11 +103,10 @@ function FindPeopeleByTriats(people)
            
            let filteredPeople = peolpe.filter(function(el){
                 if (el.gender === gender) {
-               return el;
+               mainMenu(el, people);
            }
-           else {
-            return app(people);
-        }
+         
+        
            });
           
         }
@@ -116,11 +116,9 @@ function FindPeopeleByTriats(people)
 
             let filteredPeople = peolpe.filter(function(el){
                 if (el.height === height){
-                    return el
+                    mainMenu(el, people);
                 }
-                else {
-                    return app(people);
-                }
+                
             });
            
         }
@@ -130,11 +128,9 @@ function FindPeopeleByTriats(people)
             
             let filteredPeople = people.filter(function(el){
                 if (el.weight === weight){
-                    return el;
+                    mainMenu(el, people);
                 }
-                else {
-                    return app(people);
-                }
+               
             });
            
 
@@ -144,10 +140,7 @@ function FindPeopeleByTriats(people)
 
             let filteredPeople = peolpe.filter(function(el){
                 if (el.eyecolor === eyecolor){
-                    return el;
-                }
-                else {
-                    return app(people);
+                    mainMenu(el, people);
                 }
             });
 
@@ -165,6 +158,10 @@ function FindPeopeleByTriats(people)
     // height, weight, age, name, occupation, eye color.
     var personInfo = "First Name: " + person.firstName + "\n";
     personInfo += "Last Name: " + person.lastName + "\n";
+    personinfo += "gender: " + person.gender + "\n";
+    personinfo += "dob: "  += person.dob + "\n";
+    personinfo += "height: " += person.weight + "\n"; 
+    person += "wieght: " += person.height + "\n";
     // TODO: finish getting the rest of the information to display
     alert(personInfo);
   }
