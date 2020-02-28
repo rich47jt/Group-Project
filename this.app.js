@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-/*
-Build all of your functions for displaying and gathering information below (GUI).
-*/
-//hello
-=======
- 
-//Build all of your functions for displaying and gathering information below (GUI).
 
->>>>>>> 3585e3f73fcc06ffd55be4b7d615e69291a6b898
+//Build all of your functions for displaying and gathering information below (GUI).
 // app is the function called to start the entire application
     function app(people){
 
@@ -101,14 +93,11 @@ function FindPeopeleByTriats(people)
            
            
            let filteredPeople = people.filter(function(el){
-                if (el.gender === gender.male) {
+                if (el.gender === gender) {
                return el;
            }
-           else if(el.gender === gender.female){
-             return el;
-           }
            });
-           return displayPeople(filteredPeople.reduce)
+           displayPeopleList(filteredPeople);
           
         }
 
@@ -121,7 +110,7 @@ function FindPeopeleByTriats(people)
                 }
                 
             });
-            return displayPeople(filteredPeople, people);
+            return displayPeople();
            
         }
 
@@ -134,7 +123,7 @@ function FindPeopeleByTriats(people)
                 }
                
             });
-            return displayPeople(filteredPeople, people);
+            return displayPeople();
         }
         function searchByEyeColor(peolpe){
             var eyecolor = prompt("What is the eyecoloe of the person your looking for",chars);
@@ -144,7 +133,7 @@ function FindPeopeleByTriats(people)
                     return el;
                 }
             });
-            return displayPeople(filteredPeople, people);
+            return displayPeople();
 
         }
   
@@ -153,6 +142,13 @@ function FindPeopeleByTriats(people)
     alert(people.map(function(person){
       return person.firstName + " " + person.lastName;
     }).join("\n"));
+  }
+
+  function displayPeopleList(people){
+    alert(people.reduce(function(person){
+      return person.firstName + " " + person.lastName;
+    }).join("\n"));
+   
   }
   
   function displayPerson(person){
