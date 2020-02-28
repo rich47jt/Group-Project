@@ -1,7 +1,6 @@
  
 //Build all of your functions for displaying and gathering information below (GUI).
 
-
 // app is the function called to start the entire application
     function app(people){
 
@@ -86,11 +85,11 @@ function FindPeopeleByTriats(people)
         searchByEyeColor(people);
         break;
     default:
-        return app(peolpe);
+        return app(people);
  }
+ 
 
-}
-
+ }
 
 
 
@@ -113,7 +112,7 @@ function FindPeopeleByTriats(people)
         function seacrhByHeight(people){
             var height = prompt("How tall is the perosn you are looking for",chars);
 
-            let filteredPeople = peolpe.filter(function(el){
+            let filteredPeople = people.filter(function(el){
                 if (el.height === height){
                     mainMenu(el, people);
                 }
@@ -122,7 +121,7 @@ function FindPeopeleByTriats(people)
            
         }
 
-        function seacrhByWeight(peolpe){
+        function seacrhByWeight(people){
             var weight = prompt("What is the wieght of the perosn you are looking for",chars);
             
             let filteredPeople = people.filter(function(el){
@@ -134,7 +133,7 @@ function FindPeopeleByTriats(people)
            
 
         }
-        function searchByEyeColor(peolpe){
+        function searchByEyeColor(people){
             var eyecolor = prompt("What is the eyecoloe of the person your looking for",chars);
 
             let filteredPeople = peolpe.filter(function(el){
