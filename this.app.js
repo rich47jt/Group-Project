@@ -66,6 +66,22 @@
     return mainMenu(filteredPeople[0],people);
    
 }
+function searchByGender(people){
+  var Gender = promptFor("What is the person's Gender?", chars);
+  
+
+  let filteredPeople = people.filter(function(el) {
+    if(el.gender === male) {
+      return el;
+    }
+    else(el.gender === female); {
+      return el;
+    }
+   
+  });
+  return mainMenu(filteredPeople[0],people);
+ 
+}
 
 function FindPeopeleByTriats(people)
 { var searchtraits = promptFor("choose what trait do you want to search by 1 = Gender, 2 = Height, 3 = Weight, 4 = Eye Color", chars );
