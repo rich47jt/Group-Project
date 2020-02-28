@@ -160,6 +160,9 @@ function FindPeopeleByTriats(people)
     personInfo += "gender: " + person.gender + "\n";
     personInfo += "height: " + person.height + "\n"; 
     personInfo += "weight: " + person.weight + "\n";
+    personInfo += "occupation" + person.occupation + "\n";
+    personInfo += "eyecolor" + person.eyecolor + "\n";
+    personInfo += "dob" + person.dob + "\n";
     // TODO: finish getting the rest of the information to display
     alert(personInfo);
   }
