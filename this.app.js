@@ -1,7 +1,7 @@
 /*
 Build all of your functions for displaying and gathering information below (GUI).
 */
-
+//hello
 // app is the function called to start the entire application
 function app(people){
 
