@@ -62,8 +62,8 @@
       }
      
     });
-    return mainMenu(filteredPeople[0],people);
-   
+    return mainMenu(filteredPeople[0],people);  
+
 }
 
 
@@ -145,6 +145,9 @@ function FindPeopeleByTriats(people)
               if (el.occupation === occupation){
                   return el;
               }
+            });
+          }
+            
   
   // alerts a list of people
   function displayPeople(people){
