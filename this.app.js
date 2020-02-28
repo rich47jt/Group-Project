@@ -1,9 +1,6 @@
 
-<<<<<<< HEAD
 //Build all of your functions for displaying and gathering information below (GUI).
 // app is the function called to start the entire application
-=======
->>>>>>> 01257bcd64afc804f27deaaee15e73096844345f
     function app(people){
        var searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
         switch(searchType){
@@ -114,13 +111,6 @@ function FindPeopeleByTriats(people)
            
            
            let filteredPeople = people.filter(function(el){
-<<<<<<< HEAD
-                if (el.gender === gender) {
-               return el;
-           }
-           });
-           displayPeopleList(filteredPeople);
-=======
                 if (el.gender === person.male) {
                return el;
            }
@@ -129,7 +119,6 @@ function FindPeopeleByTriats(people)
            }
            });
            return displayPeople(filterpeople);
->>>>>>> 01257bcd64afc804f27deaaee15e73096844345f
           
         }
 
