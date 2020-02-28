@@ -88,7 +88,7 @@ function FindPeopeleByTriats(people)
 
 }
    
-       function searchByGeneder(people){
+       function searchByGender(people){
            var gender = promptFor("What is the geneder of the person you are looking for",chars);
            
            
@@ -145,9 +145,8 @@ function FindPeopeleByTriats(people)
               if (el.occupation === occupation){
                   return el;
               }
-            });
+            });   
           }
-            
   
   // alerts a list of people
   function displayPeople(people){
