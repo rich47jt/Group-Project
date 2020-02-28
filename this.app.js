@@ -76,7 +76,7 @@ function searchByGender(people){
     if(el.gender === male) {
       return el;
     }
-    else(el.gender === female) {
+    else(el.gender === female); {
       return el;
     }
    
