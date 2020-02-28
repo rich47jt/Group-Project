@@ -1,26 +1,27 @@
- /*
-Build all of your functions for displaying and gathering information below (GUI).
-*/
+ 
+//Build all of your functions for displaying and gathering information below (GUI).
+
 
 // app is the function called to start the entire application
-function app(people){
+    function app(people){
 
-    var searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
-    switch(searchType){
-      case 'yes':
-        // TODO: search by name
-         searchByName(people);
+        var searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
+        switch(searchType){
+        case 'yes':
+            // TODO: search by name
+            searchByName(people);
+            break;
+        case 'no':
+            // TODO: search by traits
+            FindPeopeleByTriats(people);
+            break;
+        default:
+            alert("Invalid input. Please try again!");
+            app(people); // restart app
         break;
-      case 'no':
-        // TODO: search by traits
-        FindPeopeleByTriats(people);
-        break;
-      default:
-        alert("Invalid input. Please try again!");
-        app(people); // restart app
-      break;
+        }
     }
-  }
+
   
   // Menu function to call once you find who you are looking for
   function mainMenu(person, people){
@@ -37,7 +38,7 @@ function app(people){
     switch(displayOption){
       case "info":
         // TODO: get person's info
-        displayPeople(people);
+       displayPerson(person);
         break;
       case "family":
         // TODO: get person's family
@@ -63,10 +64,10 @@ function app(people){
       if(el.firstName === firstName && el.lastName === lastName) {
         return el;
       }
-      else {
-          return app(people);
-      }
+     
     });
+    return mainMenu(filteredPeople[0],people);
+   
 }
 
 function FindPeopeleByTriats(people)
@@ -105,8 +106,6 @@ function FindPeopeleByTriats(people)
                 if (el.gender === gender) {
                mainMenu(el, people);
            }
-         
-        
            });
           
         }
@@ -158,10 +157,9 @@ function FindPeopeleByTriats(people)
     // height, weight, age, name, occupation, eye color.
     var personInfo = "First Name: " + person.firstName + "\n";
     personInfo += "Last Name: " + person.lastName + "\n";
-    personinfo += "gender: " + person.gender + "\n";
-    personinfo += "dob: "  += person.dob + "\n";
-    personinfo += "height: " += person.weight + "\n"; 
-    person += "wieght: " += person.height + "\n";
+    personInfo += "gender: " + person.gender + "\n";
+    personInfo += "height: " + person.height + "\n"; 
+    personInfo += "weight: " + person.weight + "\n";
     // TODO: finish getting the rest of the information to display
     alert(personInfo);
   }
