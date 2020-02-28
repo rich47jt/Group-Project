@@ -1,6 +1,13 @@
+<<<<<<< HEAD
+/*
+Build all of your functions for displaying and gathering information below (GUI).
+*/
+//hello
+=======
  
 //Build all of your functions for displaying and gathering information below (GUI).
 
+>>>>>>> 3585e3f73fcc06ffd55be4b7d615e69291a6b898
 // app is the function called to start the entire application
     function app(people){
 
