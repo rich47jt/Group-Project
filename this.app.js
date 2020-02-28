@@ -1,9 +1,11 @@
 
+<<<<<<< HEAD
 //Build all of your functions for displaying and gathering information below (GUI).
 // app is the function called to start the entire application
+=======
+>>>>>>> 01257bcd64afc804f27deaaee15e73096844345f
     function app(people){
-
-        var searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
+       var searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
         switch(searchType){
         case 'yes':
             searchByName(people);
@@ -65,7 +67,22 @@
     return mainMenu(filteredPeople[0],people);
    
 }
+function searchByGender(people){
+  var Gender = promptFor("What is the person's Gender?", chars);
+  
 
+  let filteredPeople = people.filter(function(el) {
+    if(el.gender === male) {
+      return el;
+    }
+    else(el.gender === female); {
+      return el;
+    }
+   
+  });
+  return mainMenu(filteredPeople[0],people);
+ 
+}
 
 function FindPeopeleByTriats(people)
 { var searchtraits = promptFor("choose what trait do you want to search by 1 = Gender, 2 = Height, 3 = Weight, 4 = Eye Color", chars );
@@ -83,21 +100,36 @@ function FindPeopeleByTriats(people)
         searchByEyeColor(people);
         break;
     default:
-        return app(people);
+        return app(peolpe);
  }
 
 }
-   
+    // TODO: What to do with filteredPeople?
+    //Put all filtered pple in empty array
+    //return that array
+    //Or retun new array withou those pple
+
        function searchByGeneder(people){
            var gender = promptFor("What is the geneder of the person you are looking for",chars);
            
            
            let filteredPeople = people.filter(function(el){
+<<<<<<< HEAD
                 if (el.gender === gender) {
                return el;
            }
            });
            displayPeopleList(filteredPeople);
+=======
+                if (el.gender === person.male) {
+               return el;
+           }
+           else if(el.gender === person.female){
+             return el;
+           }
+           });
+           return displayPeople(filterpeople);
+>>>>>>> 01257bcd64afc804f27deaaee15e73096844345f
           
         }
 
@@ -143,23 +175,56 @@ function FindPeopeleByTriats(people)
       return person.firstName + " " + person.lastName;
     }).join("\n"));
   }
+<<<<<<< HEAD
 
   function displayPeopleList(people){
     alert(people.reduce(function(person){
       return person.firstName + " " + person.lastName;
     }).join("\n"));
    
+=======
+  function displayFamily(spouse=null, parent1=null, parent2=null, children=null, siblings=null){
+    var outputString = "";
+    if(spouse != null)
+    {
+      outputString = "Spouse: " + spouse.firstName + " " + spouse.lastName + "\n";
+    }
+    if(parent1 != null)
+    {
+      outputString += "Parent 1: " + parent1.firstName + " " + parent1.lastName + "\n";
+    }
+    if(parent2 != null)
+    {
+      outputString += "Parent 2: " + parent2.firstName + " " + parent2.lastName + "\n";
+    }
+    if(children != null)
+    {
+      for(child in children)
+      {
+        outputString += "Child " + (parseInt(child) + 1) + ": " + children[child].firstName + " " + children[child].lastName + "\n";
+      }
+    }
+    if(siblings != null)
+    {
+      for(sibling in siblings)
+      {
+        outputString += "Sibling " + (parseInt(sibling) + 1) + ": " + siblings[sibling].firstName + " " + siblings[sibling].lastName + "\n";
+      }
+    }
+    alert(outputString);
+>>>>>>> 01257bcd64afc804f27deaaee15e73096844345f
   }
   
   function displayPerson(person){
+   
     var personInfo = "First Name: " + person.firstName + "\n";
     personInfo += "Last Name: " + person.lastName + "\n";
-    personInfo += "gender: " + person.gender + "\n";
-    personInfo += "age: " + person.dob + "\n";
-    personInfo += "height: " + person.height + "\n"; 
-    personInfo += "weight: " + person.weight + "\n";
-    personInfo += "eye color: " + person.eyeColor + "\n";
-    personInfo += "occupation: " + person.occupation + "\n";
+    personInfo += "Gender: " + person.gender + "\n";
+    personInfo += "Date of Birth: " + person.dob + "\n";
+    personInfo += "Height: " + person.height + "\n";
+    personInfo += "Weight: " + person.weight + "\n";
+    personInfo += "Eye Color: " + person.eyecolor + "\n";
+    personInfo += "Occupation: " + person.occupation + "\n";
     alert(personInfo);
   }
   
