@@ -1,24 +1,32 @@
+<<<<<<< HEAD
 /*
 Build all of your functions for displaying and gathering information below (GUI).
 */
 //hello
-// app is the function called to start the entire application
-function app(people){
+=======
+ 
+//Build all of your functions for displaying and gathering information below (GUI).
 
-    var searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
-    switch(searchType){
-      case 'yes':
-        // TODO: search by name
+>>>>>>> 3585e3f73fcc06ffd55be4b7d615e69291a6b898
+// app is the function called to start the entire application
+    function app(people){
+
+        var searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
+        switch(searchType){
+        case 'yes':
+            searchByName(people);
+            break;
+        case 'no':
+            // TODO: search by traits
+            FindPeopeleByTriats(people);
+            break;
+        default:
+            alert("Invalid input. Please try again!");
+            app(people); // restart app
         break;
-      case 'no':
-        // TODO: search by traits
-        break;
-      default:
-        alert("Invalid input. Please try again!");
-        app(people); // restart app
-      break;
+        }
     }
-  }
+
   
   // Menu function to call once you find who you are looking for
   function mainMenu(person, people){
@@ -34,7 +42,7 @@ function app(people){
   
     switch(displayOption){
       case "info":
-        // TODO: get person's info
+        displayPerson(person);
         break;
       case "family":
         // TODO: get person's family
@@ -60,11 +68,104 @@ function app(people){
       if(el.firstName === firstName && el.lastName === lastName) {
         return el;
       }
+     
     });
+    return mainMenu(filteredPeople[0],people);
+   
+}
+function searchByGender(people){
+  var Gender = promptFor("What is the person's Gender?", chars);
   
+
+  let filteredPeople = people.filter(function(el) {
+    if(el.gender === male) {
+      return el;
+    }
+    else(el.gender === female); {
+      return el;
+    }
+   
+  });
+  return mainMenu(filteredPeople[0],people);
+ 
+}
+
+function FindPeopeleByTriats(people)
+{ var searchtraits = promptFor("choose what trait do you want to search by 1 = Gender, 2 = Height, 3 = Weight, 4 = Eye Color", chars );
+ switch(searchtraits){
+     case "1":
+        searchByGeneder(people);
+         break;
+    case "2":
+        seacrhByHeight(people);
+        break;
+    case "3":
+        seacrhByWeight(people);
+        break;
+    case "4":
+        searchByEyeColor(people);
+        break;
+    default:
+        return app(peolpe);
+ }
+
+}
     // TODO: What to do with filteredPeople?
-  
-  }
+    //Put all filtered pple in empty array
+    //return that array
+    //Or retun new array withou those pple
+
+       function searchByGeneder(people){
+           var gender = promptFor("What is the geneder of the person you are looking for",chars);
+           
+           
+           let filteredPeople = people.filter(function(el){
+                if (el.gender === person.male) {
+               return el;
+           }
+           else if(el.gender === person.female){
+             return el;
+           }
+           });
+           return displayPeople(filterpeople);
+          
+        }
+
+        function seacrhByHeight(people){
+            var height = prompt("How tall is the perosn you are looking for",chars);
+
+            let filteredPeople = peolpe.filter(function(el){
+                if (el.height === height){
+                    return el;
+                }
+                
+            });
+            return displayPeople(filteredPeople, people);
+           
+        }
+
+        function seacrhByWeight(peolpe){
+            var weight = prompt("What is the wieght of the perosn you are looking for",chars);
+            
+            let filteredPeople = people.filter(function(el){
+                if (el.weight === weight){
+                    return el;
+                }
+               
+            });
+            return displayPeople(filteredPeople, people);
+        }
+        function searchByEyeColor(peolpe){
+            var eyecolor = prompt("What is the eyecoloe of the person your looking for",chars);
+
+            let filteredPeople = peolpe.filter(function(el){
+                if (el.eyecolor === eyecolor){
+                    return el;
+                }
+            });
+            return displayPeople(filteredPeople, people);
+
+        }
   
   // alerts a list of people
   function displayPeople(people){
@@ -74,11 +175,14 @@ function app(people){
   }
   
   function displayPerson(person){
-    // print all of the information about a person:
-    // height, weight, age, name, occupation, eye color.
     var personInfo = "First Name: " + person.firstName + "\n";
     personInfo += "Last Name: " + person.lastName + "\n";
-    // TODO: finish getting the rest of the information to display
+    personInfo += "gender: " + person.gender + "\n";
+    personInfo += "age: " + person.dob + "\n";
+    personInfo += "height: " + person.height + "\n"; 
+    personInfo += "weight: " + person.weight + "\n";
+    personInfo += "eye color: " + person.eyeColor + "\n";
+    personInfo += "occupation: " + person.occupation + "\n";
     alert(personInfo);
   }
   
