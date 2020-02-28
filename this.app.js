@@ -98,6 +98,8 @@ function FindPeopeleByTriats(people)
            }
            });
            displayPeople(filteredPeople);
+
+           
           
         }
 
@@ -126,7 +128,7 @@ function FindPeopeleByTriats(people)
             return displayPeople();
         }
         function searchByEyeColor(peolpe){
-            var eyecolor = prompt("What is the eyecoloe of the person your looking for",chars);
+            var eyecolor = prompt("What is the eyecolor of the person your looking for",chars);
 
             let filteredPeople = peolpe.filter(function(el){
                 if (el.eyecolor === eyecolor){
@@ -136,6 +138,13 @@ function FindPeopeleByTriats(people)
             return displayPeople();
 
         }
+        function seacrhByOccupation(people){
+          var weight = prompt("What is the occupation of the person you are looking for",chars);
+          
+          let filteredPeople = people.filter(function(el){
+              if (el.occupation === occupation){
+                  return el;
+              }
   
   // alerts a list of people
   function displayPeople(people){
