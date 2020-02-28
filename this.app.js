@@ -104,7 +104,7 @@ function FindPeopeleByTriats(people)
              return el;
            }
            });
-           return displayPeople(filterpeople.el);
+           return displayPeople(filterpeople);
           
         }
 
