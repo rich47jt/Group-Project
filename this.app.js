@@ -1,4 +1,9 @@
 
+<<<<<<< HEAD
+//Build all of your functions for displaying and gathering information below (GUI).
+// app is the function called to start the entire application
+=======
+>>>>>>> 01257bcd64afc804f27deaaee15e73096844345f
     function app(people){
        var searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
         switch(searchType){
@@ -109,6 +114,13 @@ function FindPeopeleByTriats(people)
            
            
            let filteredPeople = people.filter(function(el){
+<<<<<<< HEAD
+                if (el.gender === gender) {
+               return el;
+           }
+           });
+           displayPeopleList(filteredPeople);
+=======
                 if (el.gender === person.male) {
                return el;
            }
@@ -117,6 +129,7 @@ function FindPeopeleByTriats(people)
            }
            });
            return displayPeople(filterpeople);
+>>>>>>> 01257bcd64afc804f27deaaee15e73096844345f
           
         }
 
@@ -129,7 +142,7 @@ function FindPeopeleByTriats(people)
                 }
                 
             });
-            return displayPeople(filteredPeople, people);
+            return displayPeople();
            
         }
 
@@ -142,7 +155,7 @@ function FindPeopeleByTriats(people)
                 }
                
             });
-            return displayPeople(filteredPeople, people);
+            return displayPeople();
         }
         function searchByEyeColor(peolpe){
             var eyecolor = prompt("What is the eyecolor of the person your looking for",chars);
@@ -152,7 +165,7 @@ function FindPeopeleByTriats(people)
                     return el;
                 }
             });
-            return displayPeople(filteredPeople, people);
+            return displayPeople();
 
         }
         function seacrhByOccupation(people){
@@ -169,6 +182,14 @@ function FindPeopeleByTriats(people)
       return person.firstName + " " + person.lastName;
     }).join("\n"));
   }
+<<<<<<< HEAD
+
+  function displayPeopleList(people){
+    alert(people.reduce(function(person){
+      return person.firstName + " " + person.lastName;
+    }).join("\n"));
+   
+=======
   function displayFamily(spouse=null, parent1=null, parent2=null, children=null, siblings=null){
     var outputString = "";
     if(spouse != null)
@@ -198,6 +219,7 @@ function FindPeopeleByTriats(people)
       }
     }
     alert(outputString);
+>>>>>>> 01257bcd64afc804f27deaaee15e73096844345f
   }
   
   function displayPerson(person){
