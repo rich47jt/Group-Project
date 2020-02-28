@@ -1,14 +1,12 @@
  
 //Build all of your functions for displaying and gathering information below (GUI).
 
-
 // app is the function called to start the entire application
     function app(people){
 
         var searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
         switch(searchType){
         case 'yes':
-            // TODO: search by name
             searchByName(people);
             break;
         case 'no':
@@ -37,8 +35,7 @@
   
     switch(displayOption){
       case "info":
-        // TODO: get person's info
-       displayPerson(person);
+        displayPerson(person);
         break;
       case "family":
         // TODO: get person's family
@@ -71,7 +68,7 @@
 }
 
 function FindPeopeleByTriats(people)
-{ var searchtraits = promptFor("choose what trait do you want to search for");
+{ var searchtraits = promptFor("choose what trait do you want to search by 1 = Gender, 2 = Height, 3 = Weight, 4 = Eye Color", chars );
  switch(searchtraits){
      case "1":
         searchByGeneder(people);
@@ -90,10 +87,6 @@ function FindPeopeleByTriats(people)
  }
 
 }
-
-
-
-
     // TODO: What to do with filteredPeople?
     //Put all filtered pple in empty array
     //return that array
@@ -102,11 +95,16 @@ function FindPeopeleByTriats(people)
        function searchByGeneder(people){
            var gender = promptFor("What is the geneder of the person you are looking for",chars);
            
-           let filteredPeople = peolpe.filter(function(el){
-                if (el.gender === gender) {
-               mainMenu(el, people);
+           
+           let filteredPeople = people.filter(function(el){
+                if (el.gender === person.male) {
+               return el;
+           }
+           else if(el.gender === person.female){
+             return el;
            }
            });
+           return displayPeople(filterpeople.el);
           
         }
 
@@ -115,10 +113,11 @@ function FindPeopeleByTriats(people)
 
             let filteredPeople = peolpe.filter(function(el){
                 if (el.height === height){
-                    mainMenu(el, people);
+                    return el;
                 }
                 
             });
+            return displayPeople(filteredPeople, people);
            
         }
 
@@ -127,21 +126,21 @@ function FindPeopeleByTriats(people)
             
             let filteredPeople = people.filter(function(el){
                 if (el.weight === weight){
-                    mainMenu(el, people);
+                    return el;
                 }
                
             });
-           
-
+            return displayPeople(filteredPeople, people);
         }
         function searchByEyeColor(peolpe){
             var eyecolor = prompt("What is the eyecoloe of the person your looking for",chars);
 
             let filteredPeople = peolpe.filter(function(el){
                 if (el.eyecolor === eyecolor){
-                    mainMenu(el, people);
+                    return el;
                 }
             });
+            return displayPeople(filteredPeople, people);
 
         }
   
@@ -153,14 +152,14 @@ function FindPeopeleByTriats(people)
   }
   
   function displayPerson(person){
-    // print all of the information about a person:
-    // height, weight, age, name, occupation, eye color.
     var personInfo = "First Name: " + person.firstName + "\n";
     personInfo += "Last Name: " + person.lastName + "\n";
     personInfo += "gender: " + person.gender + "\n";
+    personInfo += "age: " + person.dob + "\n";
     personInfo += "height: " + person.height + "\n"; 
     personInfo += "weight: " + person.weight + "\n";
-    // TODO: finish getting the rest of the information to display
+    personInfo += "eye color: " + person.eyeColor + "\n";
+    personInfo += "occupation: " + person.occupation + "\n";
     alert(personInfo);
   }
   
