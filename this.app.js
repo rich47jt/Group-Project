@@ -66,22 +66,7 @@
     return mainMenu(filteredPeople[0],people);
    
 }
-function searchByGender(people){
-  var Gender = promptFor("What is the person's Gender?", chars);
-  
 
-  let filteredPeople = people.filter(function(el) {
-    if(el.gender === male) {
-      return el;
-    }
-    else(el.gender === female); {
-      return el;
-    }
-   
-  });
-  return mainMenu(filteredPeople[0],people);
- 
-}
 
 function FindPeopeleByTriats(people)
 { var searchtraits = promptFor("choose what trait do you want to search by 1 = Gender, 2 = Height, 3 = Weight, 4 = Eye Color", chars );
@@ -99,28 +84,24 @@ function FindPeopeleByTriats(people)
         searchByEyeColor(people);
         break;
     default:
-        return app(peolpe);
+        return app(people);
  }
 
 }
-    // TODO: What to do with filteredPeople?
-    //Put all filtered pple in empty array
-    //return that array
-    //Or retun new array withou those pple
-
+   
        function searchByGeneder(people){
            var gender = promptFor("What is the geneder of the person you are looking for",chars);
            
            
            let filteredPeople = people.filter(function(el){
-                if (el.gender === person.male) {
+                if (el.gender === gender.male) {
                return el;
            }
-           else if(el.gender === person.female){
+           else if(el.gender === gender.female){
              return el;
            }
            });
-           return displayPeople(filterpeople);
+           return displayPeople(filteredPeople.reduce)
           
         }
 
