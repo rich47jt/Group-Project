@@ -71,13 +71,13 @@ function FindPeopeleByTriats(people)
 { var searchtraits = promptFor("choose what trait do you want to search by 1 = Gender, 2 = Height, 3 = Weight, 4 = Eye Color", chars );
  switch(searchtraits){
      case "1":
-        searchByGeneder(people);
+      searchByGender(people);
          break;
     case "2":
-        seacrhByHeight(people);
+      searchByHeight(people);
         break;
     case "3":
-        seacrhByWeight(people);
+        searchByWeight(people);
         break;
     case "4":
         searchByEyeColor(people);
@@ -103,39 +103,39 @@ function FindPeopeleByTriats(people)
           
         }
 
-        function seacrhByHeight(_people){
-            var height = prompt("How tall is the perosn you are looking for",chars);
+        function searchByHeight(people){
+            var height = prompt("How tall is the perosn you are looking for" ,chars);
 
-            let filteredPeople = peolpe.filter(function(el){
-                if (el.height === height){
+            let filteredPeople = people.filter(function(el){
+                if (el.height == height) {
                     return el;
                 }
                 
             });
-            return displayPeople();
+            return displayPeople(filteredPeople);
            
         }
 
-        function seacrhByWeight(_peolpe){
+        function searchByWeight(people){
             var weight = prompt("What is the wieght of the perosn you are looking for",chars);
             
             let filteredPeople = people.filter(function(el){
-                if (el.weight === weight){
+                if (el.weight == weight){
                     return el;
                 }
                
             });
-            return displayPeople();
+            return displayPeople(filteredPeople);
         }
-        function searchByEyeColor(peolpe){
+        function searchByEyeColor(people){
             var eyecolor = prompt("What is the eyecolor of the person your looking for",chars);
 
-            let filteredPeople = peolpe.filter(function(el){
-                if (el.eyecolor === eyecolor){
+            let filteredPeople = people.filter(function(el){
+                if (el.eyecolor === eyecolor) {
                     return el;
                 }
             });
-            return displayPeople();
+            return displayPeople(filteredPeople);
 
         }
         function seacrhByOccupation(people){
@@ -145,7 +145,18 @@ function FindPeopeleByTriats(people)
               if (el.occupation === occupation){
                   return el;
               }
-            });   
+            }); 
+            return displayPeople(filteredPeople);
+          }
+
+          function seachByDob(people){
+            var dob = promptFor("What is the persons date of birth you are looking for,chars");
+            let filteredPeople = people.filter(function(el){
+              if (el.dob === dob){
+                return el
+              }
+            });
+            return displayPeople(filteredPeople);
           }
   
   // alerts a list of people
