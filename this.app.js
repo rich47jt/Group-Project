@@ -72,7 +72,7 @@
 //     }
 //   });
 //   return displayPeople(filteredPeople);
-}
+//}
 
 function FindPeopeleByTriats(people){ 
  
